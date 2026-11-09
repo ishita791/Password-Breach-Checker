@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check whether your password has appeared in known data breaches using the Have I Been Pwned API.">
+    <title> Password Breach Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">🛡️</span>
+            Password<span>Guard</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#security-tips">Security Tips</a>
+            <a href="#about">About</a>
+        </div>
+
+        <a href="#checker" class="nav-button">Check Password</a>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="security-badge">
+                    <span class="status-dot"></span>
+                    PASSWORD SECURITY CHECKER
+                </div>
+
+                <h1>
+                    Was Your Password
+                    <span>Exposed?</span>
+                </h1>
+
+                <p class="hero-description">
+                    Check whether your password has appeared in
+                    known data breaches. Protect your digital
+                    identity with a simple security check.
+                </p>
+
+                <!-- Password Checker -->
+                <div class="checker-card" id="checker">
+
+                    <label for="password">
+                        Enter your password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter password to check"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-button"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <button id="checkBtn" class="check-button">
+                        <span>Check Password</span>
+                        <span>→</span>
+                    </button>
+
+                    <p class="privacy-note">
+                        🔒 Your original password is never sent
+                        to our API or stored.
+                    </p>
+
+                    <!-- Loading -->
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>Checking password security...</p>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="result" class="result hidden" aria-live="polite">
+                    </div>
+
+                </div>
+
+                <div class="hero-note">
+                    Powered by Have I Been Pwned Pwned Passwords API
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- How it Works -->
+        <section class="section" id="how-it-works">
+
+            <div class="section-heading">
+                <span class="section-label">THE PROCESS</span>
+                <h2>How Does It Work?</h2>
+                <p>
+                    Your password is checked using a privacy-focused
+                    method called k-anonymity.
+                </p>
+            </div>
+
+            <div class="steps-container">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">🔑</div>
+                    <h3>Enter Password</h3>
+                    <p>
+                        Enter the password you want to check
+                        in the password checker.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🔐</div>
+                    <h3>SHA-1 Hashing</h3>
+                    <p>
+                        Your browser converts the password
+                        into a SHA-1 hash.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🌐</div>
+                    <h3>API Request</h3>
+                    <p>
+                        Only the first five hash characters
+                        are sent to the HIBP API.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">🛡️</div>
+                    <h3>Security Result</h3>
+                    <p>
+                        Your browser matches the hash and
+                        displays the exposure count.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Security Tips -->
+        <section class="section tips-section" id="security-tips">
+
+            <div class="section-heading">
+                <span class="section-label">STAY PROTECTED</span>
+                <h2>Smart Password Security Tips</h2>
+                <p>
+                    Follow these practices to protect
+                    your online accounts.
+                </p>
+            </div>
+
+            <div class="tips-grid">
+
+                <div class="tip-card">
+                    <span>🔐</span>
+                    <h3>Use Strong Passwords</h3>
+                    <p>
+                        Create long passwords with a combination
+                        of different characters.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>🚫</span>
+                    <h3>Avoid Reusing Passwords</h3>
+                    <p>
+                        Use a unique password for every
+                        online account.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>🔑</span>
+                    <h3>Use a Password Manager</h3>
+                    <p>
+                        Store and manage your passwords
+                        using a reputable password manager.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>📱</span>
+                    <h3>Enable Two-Factor Authentication</h3>
+                    <p>
+                        Add another layer of protection
+                        to your important accounts.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="section about-section" id="about">
+
+            <div class="about-content">
+
+                <span class="section-label">ABOUT THE PROJECT</span>
+
+                <h2>Protect Your Digital Identity</h2>
+
+                <p>
+                    PasswordGuard is an educational password
+                    security project designed to help users
+                    check whether their passwords have appeared
+                    in known data breaches.
+                </p>
+
+                <p>
+                    It uses the official Have I Been Pwned
+                    Pwned Passwords API and the k-anonymity
+                    model to perform privacy-conscious checks.
+                </p>
+
+                <p>
+                    A password not found in the database is
+                    not guaranteed to be completely secure.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <a href="#home" class="logo">
+            🛡️ Password<span>Guard</span>
+        </a>
+
+        <p>
+            Educational project inspired by Have I Been Pwned.
+        </p>
+
+        <p class="attribution">
+            Password data provided by
+            <a href="https://haveibeenpwned.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Have I Been Pwned
+            </a>
+        </p>
+
+        <p class="copyright">
+            © 2026 PasswordGuard. Educational Project.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080f1e;
+    color: #f1f5f9;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0c1729;
+    border-bottom: 1px solid #1e2c42;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.logo span:last-child {
+    color: #38bdf8;
+}
+
+.logo-icon {
+    margin-right: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #aab8cc;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.nav-button {
+    background: #0284c7;
+    color: white;
+    padding: 10px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: #0369a1;
+}
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+
+.hero {
+    min-height: 690px;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(14, 116, 180, 0.19),
+            transparent 50%
+        ),
+        #080f1e;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 760px;
+}
+
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid #164e63;
+    border-radius: 30px;
+    color: #38bdf8;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero-description {
+    color: #94a3b8;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+
+/* ==============================
+   CHECKER CARD
+============================== */
+
+.checker-card {
+    background: #101d30;
+    border: 1px solid #263951;
+    padding: 30px;
+    border-radius: 14px;
+    max-width: 620px;
+    margin: auto;
+    text-align: left;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.checker-card label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #080f1e;
+    border: 1px solid #33465f;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    min-width: 0;
+}
+
+.input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+.toggle-button {
+    padding: 10px 15px;
+    background: transparent;
+    border: none;
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.check-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #0284c7;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.check-button:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+.check-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.privacy-note {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+.hero-note {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+
+/* ==============================
+   LOADING
+============================== */
+
+.loading {
+    text-align: center;
+    margin-top: 25px;
+    color: #38bdf8;
+}
+
+.spinner {
+    width: 35px;
+    height: 35px;
+    border: 3px solid #334155;
+    border-top-color: #38bdf8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: auto auto 12px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==============================
+   RESULT CARDS
+============================== */
+
+.result {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 10px;
+    animation: appear 0.3s ease;
+}
+
+.result.exposed {
+    background: rgba(239, 68, 68, 0.10);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.result.safe {
+    background: rgba(34, 197, 94, 0.10);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.result.error {
+    background: rgba(245, 158, 11, 0.10);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
+.result h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.result.exposed h3 {
+    color: #f87171;
+}
+
+.result.safe h3 {
+    color: #4ade80;
+}
+
+.result.error h3 {
+    color: #fbbf24;
+}
+
+.result p {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.exposure-count {
+    font-size: 38px;
+    font-weight: 800;
+    color: #f87171;
+    margin: 10px 0;
+}
+
+.result-advice {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #334155;
+}
+
+.result-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==============================
+   COMMON SECTIONS
+============================== */
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-label {
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   HOW IT WORKS
+============================== */
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    position: relative;
+    background: #101d30;
+    border: 1px solid #263951;
+    border-radius: 12px;
+    padding: 25px 20px;
+    transition: 0.3s;
+}
+
+.step-card:hover,
+.tip-card:hover {
+    transform: translateY(-6px);
+    border-color: #0284c7;
+}
+
+.step-number {
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.step-icon {
+    font-size: 32px;
+    margin: 18px 0;
+}
+
+.step-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   SECURITY TIPS
+============================== */
+
+.tips-section {
+    background: #0c1729;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    padding: 25px;
+    background: #101d30;
+    border: 1px solid #263951;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.tip-card span {
+    font-size: 32px;
+}
+
+.tip-card h3 {
+    margin: 15px 0 10px;
+    font-size: 16px;
+}
+
+.tip-card p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+
+/* ==============================
+   ABOUT
+============================== */
+
+.about-section {
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(14, 116, 180, 0.12),
+            transparent 45%
+        ),
+        #080f1e;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #0c1729;
+    border-top: 1px solid #263951;
+}
+
+.footer p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.footer a:not(.logo) {
+    color: #38bdf8;
+}
+
+.copyright {
+    font-size: 12px !important;
+    margin-top: 20px !important;
+    color: #64748b !important;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 900px) {
+
+    .steps-container,
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        padding: 75px 18px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .checker-card {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 27px;
+    }
+
+    .steps-container,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
